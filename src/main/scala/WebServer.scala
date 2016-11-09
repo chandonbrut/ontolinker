@@ -13,14 +13,11 @@ object WebServer {
 
     implicit val system = ActorSystem("my-system")
     implicit val materializer = ActorMaterializer()
-    // needed for the future flatMap/onComplete in the end
     implicit val executionContext = system.dispatcher
 
-      val rxService = new RX
-      Http().bindAndHandle(rxService.route, "localhost", 8080)
+    val rxService = new RX
+    Http().bindAndHandle(rxService.route, "localhost", 8080)
 
-    println("Press ENTER")
-    StdIn.readLine()
   }
 
 }
