@@ -5,6 +5,8 @@ version := "1.0"
 scalaVersion := "2.11.8"
 
 libraryDependencies ++= Seq(
+  "net.cakesolutions" %% "scala-kafka-client" % "0.10.0.0",
+  "net.cakesolutions" %% "scala-kafka-client-akka" % "0.10.0.0",
   "org.apache.jena" % "jena-core" % "3.1.0",
   "net.sourceforge.owlapi" % "owlapi-distribution" % "5.0.4",
   "com.hermit-reasoner" % "org.semanticweb.hermit" % "1.3.8.4",
@@ -35,3 +37,5 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-http-testkit" % "2.4.11",
   "com.typesafe.akka" %% "akka-http-xml-experimental" % "2.4.11"
 )
+
+resolvers += Resolver.bintrayRepo("cakesolutions", "maven")
